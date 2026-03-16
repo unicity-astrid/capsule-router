@@ -9,9 +9,8 @@
 //! the tool name, forwards the request to the appropriate tool capsule's
 //! topic, and routes results back to `tool.v1.execute.result`.
 
-use astrid_events::ipc::IpcPayload;
-use astrid_events::llm::ToolCallResult;
 use astrid_sdk::prelude::*;
+use astrid_sdk::types::{IpcPayload, ToolCallResult};
 
 /// Tool router capsule. Stateless middleware.
 #[derive(Default)]
