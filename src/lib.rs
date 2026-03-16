@@ -42,19 +42,15 @@ impl ToolRouter {
                 .chars()
                 .any(|c| !c.is_alphanumeric() && c != '-' && c != '_' && c != ':')
         {
-            let _ = log::log(
-                "warn",
-                format!("Rejected invalid tool name: {tool_name}"),
-            );
-            return Self::publish_error_result(
-                &call_id,
-                format!("Invalid tool name: {tool_name}"),
-            );
+            let _ = log::log("warn", format!("Rejected invalid tool name: {tool_name}"));
+            return Self::publish_error_result(&call_id, format!("Invalid tool name: {tool_name}"));
         }
 
         let forward_topic = format!("tool.v1.execute.{tool_name}");
 
-        let _ = log::info(format!("Routing tool request: {tool_name} -> {forward_topic}"));
+        let _ = log::info(format!(
+            "Routing tool request: {tool_name} -> {forward_topic}"
+        ));
 
         let forward_payload = IpcPayload::ToolExecuteRequest {
             call_id: call_id.clone(),
