@@ -10,6 +10,9 @@ id = "router"
 file = "astrid_capsule_router.wasm"
 type = "executable"
 
+[exports.astrid]
+tool = "1.0.0"
+
 [capabilities]
 ipc_publish = ["tool.v1.execute.*", "tool.v1.execute.result"]
 
