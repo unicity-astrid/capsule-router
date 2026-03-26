@@ -10,7 +10,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 astrid-sdk = { version = "0.5.3", features = ["derive"] }
-extism-pdk = "1.4.1"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 uuid = { version = "1.22", features = ["v4", "serde", "rng-getrandom"] }
@@ -19,3 +18,8 @@ uuid = { version = "1.22", features = ["v4", "serde", "rng-getrandom"] }
 codegen-units = 1
 lto = true
 strip = true
+
+[patch.crates-io]
+astrid-sdk = { path = "../../sdk-rust/astrid-sdk" }
+astrid-sdk-macros = { path = "../../sdk-rust/astrid-sdk-macros" }
+astrid-sys = { path = "../../sdk-rust/astrid-sys" }
