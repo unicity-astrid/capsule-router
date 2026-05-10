@@ -14,9 +14,9 @@ type = "executable"
 "astrid:tool" = "1.0.0"
 
 [publish]
-"tool.v1.execute.*" = { wit = "TODO" }
-"tool.v1.execute.result" = { wit = "TODO" }
+"tool.v1.execute.*" = { wit = "@unicity-astrid/wit/types/tool-call" }
+"tool.v1.execute.result" = { wit = "@unicity-astrid/wit/types/tool-call-result" }
 
 [subscribe]
-"tool.v1.request.execute" = { wit = "TODO", handler = "handle_execute_request" }
-"tool.v1.execute.*.result" = { wit = "TODO", handler = "handle_execute_result" }
+"tool.v1.request.execute" = { wit = "@unicity-astrid/wit/types/tool-call", handler = "handle_execute_request" }
+"tool.v1.execute.*.result" = { wit = "@unicity-astrid/wit/types/tool-call-result", handler = "handle_execute_result" }
