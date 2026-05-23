@@ -25,8 +25,3 @@ panic = "abort"
 # `sdk-rust` workspace is not yet published to crates.io; resolve the
 # `astrid-sdk*` family from the sibling polyrepo checkout. Remove this
 # block once sdk-rust 0.7.0 lands on crates.io.
-[patch.crates-io]
-astrid-sdk        = { path = "../../sdk-rust/astrid-sdk" }
-astrid-sdk-macros = { path = "../../sdk-rust/astrid-sdk-macros" }
-astrid-sys        = { path = "../../sdk-rust/astrid-sys" }
-astrid-types      = { path = "../../core/crates/astrid-types" }
